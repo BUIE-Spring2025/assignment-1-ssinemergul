@@ -1,12 +1,13 @@
 def int_to_roman(num):
-    if  1<= num <=3999:
-        symbols=['M', 'D', 'C', 'L', 'X', 'V', 'I']
-        values= [1000, 500, 100, 50, 10,5, 1]
-        roman= ''
+    if 1 <= num <= 3999:
+        symbols = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
+        values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+        
+        roman = ''
         for i in range(len(values)):
-            while num >= values[i]:
-                roman +=symbols[i]
-                num -= symbols[i]
-        return roman 
+            while num >= values[i]: 
+                roman += symbols[i]
+                num -= values[i]
+        return roman
     else:
-        print('value must between 1 and 3999')
+        return 'Value must be between 1 and 3999'
